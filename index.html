@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#ff6b35" />
+    <title>电商经营模拟器</title>
+    <link rel="icon" type="image/png" href="icon.png" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bank.css" />
+    <link rel="stylesheet" type="text/css" href="css/employee.css" />
+    <link rel="stylesheet" type="text/css" href="css/procurement.css" />
+    <link rel="stylesheet" type="text/css" href="css/mobile.css" />
+</head>
+<body class="privacy-pending">
+    <!-- 隐私协议：未同意前不可进入游戏 -->
+    <div id="privacyOverlay" class="privacy-overlay" style="z-index:2147483646;">
+        <div class="privacy-modal">
+            <div class="privacy-header">
+                <div class="privacy-title">用户协议与隐私政策</div>
+            </div>
+            <div class="privacy-body">
+                <div class="privacy-content" id="privacyPolicyBody">
+                    <p class="privacy-welcome">欢迎使用《电商经营模拟器》！请审慎阅读并充分理解本政策全部条款。</p>
+                    <p class="privacy-text">协议正文加载中…</p>
+                </div>
+                <div class="privacy-checkbox" id="privacyCheckboxWrap">
+                    <label>
+                        <input type="checkbox" id="privacyAgree" />
+                        <span>我已阅读并同意《用户协议与隐私政策》</span>
+                    </label>
+                </div>
+            </div>
+            <div class="privacy-footer">
+                <button class="btn btn-secondary" id="privacyDisagree">不同意并退出</button>
+                <button class="btn btn-primary" id="privacyAgreeBtn" disabled>同意并进入</button>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function () {
+        var KEY = 'ecommerce_sim_privacy_agreed';
+        var VER_KEY = 'ecommerce_sim_privacy_version';
+        var VER = '4';
+        var overlay = document.getElementById('privacyOverlay');
+        function agreed() {
+            try {
+                return localStorage.getItem(KEY) === 'true' && localStorage.getItem(VER_KEY) === VER;
+            } catch (e) { return false; }
+        }
+        if (agreed() && overlay) overlay.classList.add('hidden');
+        if (agreed()) {
+            try { document.body.classList.remove('privacy-pending'); } catch (e) {}
+        }
+    })();
+    </script>
+
+    <div id="topHeader" class="top-header"></div>
+    <div id="mainContainer" class="main-container"></div>
+    <div id="bottomNav" class="bottom-nav"></div>
+    <div id="overlayRoot"></div>
+
+    <script type="text/javascript" src="js/app/manifest.js"></script>
+    <script type="text/javascript" src="js/app/inject.js"></script>
+</body>
+</html>

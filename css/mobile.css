@@ -1,0 +1,108 @@
+/* 手机竖屏：铺满屏幕、刘海安全区、触控热区 */
+
+html, body {
+    height: 100%;
+    height: 100dvh;
+    width: 100%;
+    max-width: 100vw;
+    overscroll-behavior: none;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    touch-action: manipulation;
+}
+
+button, a, .btn, .nav-item, .tab-item, .speed-btn, .grid-item, .stat-item {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.top-header {
+    padding-top: calc(8px + env(safe-area-inset-top, 0px));
+    max-width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+}
+
+.bottom-nav {
+    height: calc(56px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    max-width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+}
+
+:root {
+    --app-bottom-h: calc(56px + env(safe-area-inset-bottom, 0px));
+}
+
+.main-container {
+    max-width: 100vw !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: max(10px, env(safe-area-inset-left, 0px));
+    padding-right: max(10px, env(safe-area-inset-right, 0px));
+}
+
+.modal,
+.privacy-modal,
+.shop-name-modal {
+    width: calc(100% - 20px) !important;
+    max-width: 100% !important;
+    max-height: min(90dvh, 90vh);
+}
+
+.privacy-overlay,
+.shop-name-overlay,
+.modal-overlay {
+    padding: env(safe-area-inset-top, 8px) 10px env(safe-area-inset-bottom, 8px);
+}
+
+input, select, textarea {
+    font-size: 16px !important;
+}
+
+.nav-item {
+    min-height: 44px;
+}
+
+.privacy-footer {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.privacy-footer .btn {
+    flex: 1 1 120px;
+}
+
+#shopDetailModal .shop-detail-actions {
+    grid-template-columns: repeat(auto-fit, minmax(min(136px, 100%), 1fr));
+    gap: 8px;
+}
+#shopDetailModal .shop-detail-actions .btn {
+    min-height: 40px;
+}
+
+@media (hover: none) {
+    .product-image:hover {
+        transform: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+}
+
+@media (min-width: 768px) {
+    .main-container,
+    .top-header,
+    .bottom-nav {
+        max-width: 100vw !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .modal {
+        max-width: 100% !important;
+    }
+}

@@ -1,0 +1,212 @@
+/* ============================================================
+   员工管理模块（V2 重制）样式
+   前缀 emv2- 避免与旧 emp-mgr 样式冲突
+   ============================================================ */
+
+.emv2-container { padding: 0; font-size: 14px; color: #333; }
+.emv2-overlay .modal-content { max-height: 88vh; overflow: hidden; display: flex; flex-direction: column; }
+.emv2-overlay .modal-body { overflow-y: auto; }
+
+/* 顶部汇总卡片 */
+.emv2-summary { display: flex; gap: 8px; padding: 12px 12px 4px; flex-wrap: wrap; }
+.emv2-sum-card {
+    flex: 1; min-width: 72px; border-radius: 12px; padding: 10px 8px; color: #fff;
+    text-align: center; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.emv2-sum-value { font-size: 19px; font-weight: 800; line-height: 1.2; }
+.emv2-sum-label { font-size: 11px; opacity: 0.92; margin-top: 2px; }
+
+/* Tab 栏：换行展示，避免「晋升」后面的薪酬/福利/幸福被挤出屏幕 */
+.emv2-tabs {
+    display: flex; flex-wrap: wrap; overflow: visible; padding: 8px 10px 8px; gap: 6px;
+    border-bottom: 1px solid #f0f0f0; background: #fff; position: sticky; top: 0; z-index: 5;
+}
+.emv2-tabs::-webkit-scrollbar { display: none; }
+.emv2-tab {
+    flex: 0 0 auto; padding: 6px 10px; border-radius: 16px; background: #f5f5f5;
+    color: #666; font-size: 12px; cursor: pointer; display: flex; align-items: center; gap: 3px;
+    border: 1px solid transparent; user-select: none;
+}
+.emv2-tab.active { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; font-weight: 700; }
+.emv2-tab-icon { font-size: 14px; }
+
+.emv2-body { padding: 10px 12px 16px; }
+
+/* 筛选 */
+.emv2-filter-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+.emv2-search {
+    flex: 1; min-width: 120px; padding: 8px 12px; border: 1px solid #e0e0e0; border-radius: 8px;
+    font-size: 13px; outline: none; background: #fff;
+}
+.emv2-search:focus { border-color: #667eea; }
+.emv2-chip {
+    padding: 5px 10px; border-radius: 14px; border: 1px solid #e0e0e0; background: #fff;
+    font-size: 12px; color: #666; cursor: pointer;
+}
+.emv2-chip.on { background: #e8eaf6; border-color: #667eea; color: #3949ab; font-weight: 700; }
+.emv2-select {
+    padding: 6px 8px; border: 1px solid #e0e0e0; border-radius: 8px; font-size: 12px; background: #fff; outline: none;
+}
+
+/* 员工卡片 */
+.emv2-list { display: flex; flex-direction: column; gap: 8px; }
+.emv2-emp-card {
+    display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: #fff;
+    border: 1px solid #f0f0f0; border-radius: 12px; cursor: pointer;
+    transition: box-shadow 0.15s ease; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.emv2-emp-card:active { background: #fafafa; }
+.emv2-emp-card.dim { opacity: 0.62; }
+.emv2-emp-avatar {
+    width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-size: 21px; flex-shrink: 0;
+}
+.emv2-emp-main { flex: 1; min-width: 0; }
+.emv2-emp-name { font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.emv2-emp-sub { font-size: 12px; color: #888; margin-top: 2px; }
+.emv2-emp-sub2 { font-size: 11px; color: #999; margin-top: 3px; }
+.emv2-emp-side { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+
+.emv2-tag {
+    display: inline-block; padding: 1px 7px; border-radius: 8px; font-size: 10px; font-weight: 600;
+    background: #f0f0f0; color: #888; vertical-align: middle;
+}
+.emv2-tag.ok { background: #e8f5e9; color: #2e7d32; }
+.emv2-tag.info { background: #e3f2fd; color: #1565c0; }
+.emv2-tag.warn { background: #fff3e0; color: #e65100; }
+.emv2-tag.muted { background: #f5f5f5; color: #9e9e9e; }
+
+/* 空状态 */
+.emv2-empty { text-align: center; padding: 40px 12px; color: #999; font-size: 13px; }
+.emv2-empty-icon { font-size: 44px; margin-bottom: 8px; }
+
+/* 提示条 */
+.emv2-hint {
+    padding: 9px 12px; border-radius: 10px; background: #fff8e1; border-left: 3px solid #ffb300;
+    font-size: 12px; color: #8d6e00; line-height: 1.6; margin-bottom: 10px;
+}
+.emv2-hint2 {
+    padding: 9px 12px; border-radius: 10px; background: #f3f7ff; border-left: 3px solid #667eea;
+    font-size: 12px; color: #4a5c9e; line-height: 1.6; margin-top: 10px;
+}
+
+/* 招聘卡片 */
+.emv2-hire-card {
+    display: flex; align-items: center; gap: 10px; padding: 12px; background: #fff;
+    border: 1px solid #f0f0f0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.emv2-hire-icon {
+    width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #e8eaf6, #c5cae9);
+    display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
+}
+.emv2-hire-main { flex: 1; min-width: 0; }
+.emv2-hire-name { font-size: 14px; font-weight: 700; }
+.emv2-hire-desc { font-size: 12px; color: #888; margin-top: 2px; }
+.emv2-hire-salary { font-size: 11px; color: #e65100; margin-top: 3px; font-weight: 600; }
+.emv2-hire-actions { display: flex; flex-direction: column; gap: 6px; }
+.emv2-quick-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* 任务指派 */
+.emv2-task-card {
+    padding: 12px; background: #fff; border: 1px solid #f0f0f0; border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.emv2-task-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+.emv2-task-stats { font-size: 11px; color: #999; flex-shrink: 0; text-align: right; }
+.emv2-focus-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.emv2-chip2 {
+    padding: 5px 10px; border-radius: 14px; border: 1px solid #e0e0e0; background: #fff;
+    font-size: 12px; color: #666; cursor: pointer;
+}
+.emv2-chip2.on {
+    background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; border-color: transparent; font-weight: 700;
+}
+
+/* 培训 */
+.emv2-section-title {
+    font-size: 13px; font-weight: 700; color: #555; margin: 14px 0 8px;
+    display: flex; align-items: center; gap: 4px;
+}
+.emv2-progress { height: 6px; border-radius: 3px; background: #eee; overflow: hidden; margin: 4px 0; }
+.emv2-progress-in { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #667eea, #764ba2); transition: width 0.3s ease; }
+
+/* ===== 心情/忠诚度迷你进度条 ===== */
+.emv2-moodbars { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
+.emv2-moodbar { display: flex; align-items: center; gap: 4px; font-size: 10px; color: #999; }
+.emv2-moodbar-icon { font-size: 11px; line-height: 1; }
+.emv2-moodbar-label { width: 24px; flex-shrink: 0; }
+.emv2-moodbar-track { flex: 1; height: 5px; border-radius: 3px; background: #eee; overflow: hidden; }
+.emv2-moodbar-fill { display: block; height: 100%; border-radius: 3px; transition: width 0.3s ease; }
+.emv2-moodbar-val { width: 22px; text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.emv2-log-list { display: flex; flex-direction: column; gap: 6px; }
+.emv2-log-item {
+    display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: #fafafa;
+    border-radius: 8px; font-size: 12px;
+}
+.emv2-log-item > span:first-child { font-weight: 700; flex-shrink: 0; }
+.emv2-log-item > span:nth-child(2) { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* 课程列表 */
+.emv2-course-list { display: flex; flex-direction: column; gap: 8px; max-height: 52vh; overflow-y: auto; }
+.emv2-course-card {
+    padding: 10px 12px; border: 1px solid #f0f0f0; border-radius: 12px; background: #fff;
+}
+.emv2-course-card.capped { opacity: 0.55; }
+.emv2-course-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.emv2-course-icon {
+    width: 38px; height: 38px; border-radius: 9px; background: linear-gradient(135deg, #e8eaf6, #c5cae9);
+    display: flex; align-items: center; justify-content: center; font-size: 19px; flex-shrink: 0;
+}
+.emv2-course-head > div { flex: 1; min-width: 0; }
+.emv2-course-name { font-size: 13px; font-weight: 700; }
+.emv2-course-desc { font-size: 11px; color: #999; margin-top: 2px; }
+.emv2-course-cost { font-size: 13px; font-weight: 800; color: #e65100; flex-shrink: 0; }
+
+/* 晋升阶梯 */
+.emv2-rank-ladder {
+    display: flex; align-items: flex-start; gap: 4px; overflow-x: auto; padding: 10px 4px 14px;
+    background: #fff; border: 1px solid #f0f0f0; border-radius: 12px; margin-bottom: 4px;
+    scrollbar-width: none;
+}
+.emv2-rank-ladder::-webkit-scrollbar { display: none; }
+.emv2-rank-step { flex-shrink: 0; width: 86px; text-align: center; position: relative; }
+.emv2-rank-badge {
+    width: 40px; height: 40px; margin: 0 auto; border-radius: 50%; background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.emv2-rank-name { font-size: 12px; font-weight: 700; margin-top: 5px; }
+.emv2-rank-req { font-size: 9.5px; color: #999; margin-top: 2px; line-height: 1.4; }
+.emv2-rank-sal { font-size: 10px; color: #e65100; font-weight: 700; margin-top: 2px; }
+.emv2-rank-arrow {
+    position: absolute; right: -10px; top: 16px; color: #ccc; font-size: 14px; z-index: 2;
+}
+
+/* 薪酬 */
+.emv2-pay-row {
+    display: flex; align-items: center; justify-content: space-between; padding: 9px 12px;
+    background: #fff; border: 1px solid #f0f0f0; border-radius: 10px;
+}
+.emv2-pay-amt { font-size: 14px; font-weight: 800; color: #2e7d32; flex-shrink: 0; }
+
+/* 福利 */
+.emv2-welfare-card {
+    display: flex; align-items: center; gap: 12px; padding: 14px 12px; margin-bottom: 10px;
+    background: #fff; border: 1px solid #f0f0f0; border-radius: 14px; cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.emv2-welfare-card:active { background: #fafafa; }
+.emv2-welfare-icon {
+    width: 46px; height: 46px; border-radius: 12px; background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;
+}
+.emv2-welfare-main { flex: 1; min-width: 0; }
+
+/* 详情 */
+.emv2-detail-head { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+.emv2-stat-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.emv2-stat {
+    flex: 1; min-width: 84px; text-align: center; padding: 9px 6px; background: #fafafa;
+    border: 1px solid #f0f0f0; border-radius: 10px;
+}
+.emv2-stat b { display: block; font-size: 16px; color: #3949ab; }
+.emv2-stat span { font-size: 10.5px; color: #999; }

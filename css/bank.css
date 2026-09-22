@@ -1,0 +1,720 @@
+/* ============================================
+ * 银行模块样式
+ * 独立的银行UI组件样式
+ * ============================================ */
+
+/* 模态框内容区 */
+.bank-modal {
+    background: white;
+    border-radius: 16px;
+    width: 92%;
+    max-width: 420px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: bankModalIn 0.25s ease-out;
+}
+
+@keyframes bankModalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.bank-modal .modal-body {
+    padding: 0;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.bank-modal .modal-footer {
+    padding: 10px 15px;
+    border-top: 1px solid #f0f0f0;
+    flex-shrink: 0;
+}
+
+/* 头部 */
+.bank-header {
+    text-align: center;
+    padding: 20px 15px 15px;
+    background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.bank-header-icon {
+    font-size: 40px;
+    margin-bottom: 6px;
+}
+
+.bank-header-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bank-header-subtitle {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+.bank-header-subtitle .text-success {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.bank-header-subtitle .text-danger {
+    color: #f44336;
+    font-weight: bold;
+}
+
+/* Tab 按钮 */
+.bank-tabs {
+    display: flex;
+    gap: 6px;
+    padding: 12px 15px;
+    background: #fafafa;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.bank-tab-btn {
+    flex: 1;
+    padding: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background: #f0f0f0;
+    color: #666;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.bank-tab-btn.active {
+    background: #ff6b35;
+    color: white;
+    font-weight: 500;
+}
+
+.bank-tab-btn:active {
+    transform: scale(0.97);
+}
+
+/* Tab 内容 */
+.bank-tab-content {
+    min-height: 300px;
+}
+
+.bank-tab-body {
+    padding: 15px;
+}
+
+/* 汇总卡片 */
+.bank-summary-card {
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.savings-card {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+}
+
+.loan-card {
+    background: linear-gradient(135deg, #ffebee, #ffcdd2);
+}
+
+.bank-summary-label {
+    font-size: 12px;
+    color: #2e7d32;
+    margin-bottom: 6px;
+}
+
+.loan-card .bank-summary-label {
+    color: #c62828;
+}
+
+.bank-summary-amount {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.loan-card .bank-summary-amount {
+    color: #c62828;
+}
+
+.bank-summary-desc {
+    font-size: 11px;
+    color: #4caf50;
+    margin-top: 6px;
+}
+
+.loan-card .bank-summary-desc {
+    color: #e57373;
+}
+
+.bank-loan-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+/* 表单行 */
+.bank-form-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: flex-end;
+    margin-bottom: 12px;
+}
+
+.bank-form-item {
+    min-width: 0;
+}
+
+.bank-form-label {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.bank-form-item input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.bank-form-item input[type="number"]:focus {
+    border-color: #ff6b35;
+}
+
+.bank-form-actions {
+    display: flex;
+    gap: 6px;
+    align-items: stretch;
+}
+
+.bank-form-actions .btn {
+    height: 100%;
+}
+
+/* 提示框 */
+.bank-tip-box {
+    padding: 12px;
+    background: #fff8e1;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.bank-tip-title {
+    font-size: 12px;
+    color: #f57c00;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.bank-tip-content {
+    font-size: 12px;
+    color: #795548;
+    line-height: 1.8;
+}
+
+/* 区块标题 */
+.bank-section-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 产品列表 */
+.bank-product-list {
+    margin-bottom: 18px;
+}
+
+.bank-product-card {
+    padding: 14px;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.bank-product-card.locked {
+    opacity: 0.6;
+}
+
+.bank-product-card:active {
+    transform: scale(0.99);
+    background: #fafafa;
+}
+
+.bank-product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.bank-product-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bank-lock-tip {
+    font-size: 10px;
+    color: #999;
+    margin-left: 6px;
+    font-weight: normal;
+}
+
+.bank-product-desc {
+    font-size: 11px;
+    color: #999;
+    margin-top: 3px;
+    line-height: 1.4;
+}
+
+.bank-product-rate {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.bank-product-rate-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6b35;
+}
+
+.bank-product-rate-value.text-danger {
+    color: #f44336;
+}
+
+.bank-product-rate-label {
+    font-size: 10px;
+    color: #999;
+    margin-top: 2px;
+}
+
+.bank-product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #f5f5f5;
+    font-size: 12px;
+    color: #666;
+}
+
+.bank-product-meta {
+    font-size: 12px;
+    color: #666;
+    margin: 10px 0;
+    padding: 8px 0;
+    border-top: 1px solid #f5f5f5;
+}
+
+/* 列表项卡片 */
+.bank-item-card {
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: white;
+}
+
+.bank-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.bank-item-name {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bank-item-sub {
+    font-size: 12px;
+    color: #666;
+    margin-top: 2px;
+}
+
+.bank-item-right {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.bank-item-amount {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.bank-item-amount.text-success {
+    color: #4caf50;
+}
+
+.bank-item-amount.text-danger {
+    color: #f44336;
+}
+
+.bank-item-label {
+    font-size: 10px;
+    color: #999;
+    margin-top: 2px;
+}
+
+/* 进度条 */
+.bank-progress-wrap {
+    margin: 10px 0;
+}
+
+.bank-progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.bank-progress-bar {
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bank-progress-fill {
+    height: 100%;
+    background: #4caf50;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.bank-item-btn {
+    margin-top: 10px !important;
+}
+
+.bank-mature-tip {
+    text-align: center;
+    font-size: 12px;
+    color: #4caf50;
+    margin-top: 8px;
+    padding: 6px;
+    background: #e8f5e9;
+    border-radius: 6px;
+}
+
+.bank-overdue-tip {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #f44336;
+    padding: 5px 8px;
+    background: #ffebee;
+    border-radius: 4px;
+}
+
+/* 空状态 */
+.bank-empty {
+    text-align: center;
+    padding: 30px 20px;
+    color: #bbb;
+    font-size: 13px;
+    background: #fafafa;
+    border-radius: 8px;
+}
+
+/* 交易记录 */
+.bank-records-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.bank-record-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.bank-record-item:last-child {
+    border-bottom: none;
+}
+
+.bank-record-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.bank-record-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.bank-record-desc {
+    font-size: 13px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bank-record-time {
+    font-size: 11px;
+    color: #999;
+    margin-top: 2px;
+}
+
+.bank-record-amount {
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.bank-record-amount.text-success {
+    color: #4caf50;
+}
+
+.bank-record-amount.text-danger {
+    color: #f44336;
+}
+
+/* 子弹窗 */
+.bank-submodal {
+    padding: 15px;
+}
+
+.bank-submodal-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.bank-modal-header-center {
+    text-align: center;
+    padding: 10px 0 20px;
+}
+
+.bank-modal-icon {
+    font-size: 44px;
+    margin-bottom: 8px;
+}
+
+.bank-modal-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.bank-modal-rate {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ff6b35;
+    margin-top: 10px;
+}
+
+.bank-modal-rate span {
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+    margin-left: 4px;
+}
+
+.bank-modal-rate.text-danger {
+    color: #f44336;
+}
+
+.bank-info-box {
+    padding: 14px;
+    background: #fafafa;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: #666;
+    line-height: 2;
+}
+
+.bank-info-box b {
+    color: #333;
+}
+
+.bank-form-group {
+    margin-bottom: 14px;
+}
+
+.bank-form-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.bank-form-group input[type="number"]:focus {
+    border-color: #ff6b35;
+}
+
+.bank-form-hint {
+    font-size: 12px;
+    color: #999;
+    margin-top: 6px;
+}
+
+.link-btn {
+    color: #ff6b35;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.link-btn:hover {
+    text-decoration: underline;
+}
+
+/* 滑块 */
+.bank-form-group input[type="range"] {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.bank-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+.bank-range-value {
+    font-weight: bold;
+    color: #333;
+}
+
+/* 预览框 */
+.bank-preview-box {
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.bank-preview-box.success {
+    background: #e8f5e9;
+}
+
+.bank-preview-box.success > div {
+    font-size: 13px;
+    color: #2e7d32;
+}
+
+.bank-preview-box.success .hint {
+    font-size: 12px;
+    color: #4caf50;
+    margin-top: 4px;
+}
+
+.bank-preview-box.danger {
+    background: #ffebee;
+}
+
+.bank-preview-box.danger > div {
+    font-size: 13px;
+    color: #c62828;
+}
+
+.bank-preview-box.danger .hint {
+    font-size: 12px;
+    color: #e57373;
+    margin-top: 4px;
+}
+
+.bank-preview-box b {
+    font-size: 15px;
+}
+
+.bank-submodal-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.bank-submodal-footer .btn {
+    flex: 1;
+}
+
+/* Toast */
+.bank-toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.25s ease;
+    pointer-events: none;
+    max-width: 80%;
+    text-align: center;
+}
+
+.bank-toast.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* 按钮尺寸调整 */
+.btn-small {
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.btn-block {
+    width: 100%;
+    display: block;
+}
+
+.btn.disabled,
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.text-success {
+    color: #4caf50;
+}
+
+.text-danger {
+    color: #f44336;
+}
